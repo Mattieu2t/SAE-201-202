@@ -1,0 +1,50 @@
+    /** Appel la fonction creeGraphe avec un graphe vide pour coupleBloque
+     *  
+     * @param tuteurs
+     * @param tutores
+     */
+    public static GrapheNonOrienteValue<Student> creeGraphe(Map<Tutor, Tutee> couple){
+        GrapheNonOrienteValue<Student> graphe = new GrapheNonOrienteValue<>();
+        // Ajout sommets et aretes
+        for(Map.Entry<Tutor,Tutee> entry:couple.entrySet()){
+            graphe.ajouterSommet((Student)entry.getKey());
+            graphe.ajouterSommet((Student)entry.getValue());
+            graphe.ajouterArete((Student)entry.getKey(),(Student)entry.getValue(),
+                                Tutorat.calculPoid((Tutor)entry.getKey(),(Tutee)entry.getValue()));
+        }
+        return graphe;
+    }
+
+    private void afficheListe(ArrayList<?> liste){
+        for(int i=0;i<liste.size();i++){
+            System.out.println(liste.get(i));
+        }
+        System.out.println("-----------------------------------");
+    }
+
+    public static Student[][] castToDoubleTableauStudent(GrapheNonOrienteValue<Student> graphe){
+        Student[][] tmp = new Student[graphe.aretes().size()][graphe.aretes().size()];
+        // extremité 1
+        for(int i=0;i<graphe.aretes().size();i++){
+            tmp[0][i] = graphe.aretes().get(i).getExtremite1();
+        }
+        // extremité 2
+        for(int i=0;i<graphe.aretes().size();i++){
+            tmp[1][i] = graphe.aretes().get(i).getExtremite2();
+        }
+        return tmp;
+    }
+
+    public static GrapheNonOrienteValue<Student> castToDoubleTableauStudent(Student[][] tableau){
+        ArrayList<Tutor> tuteurs = new ArrayList<>();
+        ArrayList<Tutee> tutores = new ArrayList<>(); 
+        // ajout Tuteurs
+        for(int i=0;i<tableau[0].length;i++){
+            tuteurs.add((Tutor)tableau[0][i]);
+        }
+        // ajout Tutores
+        for(int i=0;i<tableau[0].length;i++){
+            tutores.add((Tutee)tableau[1][i]);
+        }
+        return Tutorat.creeGraphe(tuteurs, tutores, new GrapheNonOrienteValue<>());
+    }

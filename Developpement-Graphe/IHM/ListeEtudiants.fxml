@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListeEtudiants">
+  <children>
+    <SplitPane dividerPositions="0.2505567928730512, 0.7572383073496659" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Ajout d'un étudiant" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <Text layoutX="26.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
+                  <Text layoutX="24.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre abscence :" />
+                  <Text layoutX="27.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année :" />
+                  <Text layoutX="26.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <CheckBox fx:id="math" layoutX="26.0" layoutY="242.0" mnemonicParsing="false" onAction="#selectMatiere" text="MATH" />
+                  <CheckBox fx:id="dev" layoutX="26.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectMatiere" text="DEV" />
+                  <CheckBox fx:id="ihm" layoutX="26.0" layoutY="294.0" mnemonicParsing="false" onAction="#selectMatiere" text="IHM" />
+                  <CheckBox fx:id="graphe" layoutX="25.0" layoutY="320.0" mnemonicParsing="false" onAction="#selectMatiere" text="GRAPHE" />
+                  <CheckBox fx:id="reseau" layoutX="25.0" layoutY="373.0" mnemonicParsing="false" onAction="#selectMatiere" prefHeight="26.0" prefWidth="84.0" text="RESEAU" />
+                  <CheckBox fx:id="web" layoutX="25.0" layoutY="347.0" mnemonicParsing="false" onAction="#selectMatiere" text="WEB" />
+                  <CheckBox fx:id="system" layoutX="26.0" layoutY="399.0" mnemonicParsing="false" onAction="#selectMatiere" prefHeight="26.0" prefWidth="84.0" text="SYSTEM" />
+                  <Text layoutX="26.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matière :" />
+                  <Line endX="-80.0" endY="183.0" layoutX="106.0" layoutY="242.0" startX="-80.0" startY="0.442718505859375" />
+                  <Button fx:id="boutonAjouter" layoutX="57.0" layoutY="448.0" mnemonicParsing="false" onAction="#add" text="Ajouter" />
+                  <TextField fx:id="tfPrenom" layoutX="23.0" layoutY="92.0" />
+                  <TextField fx:id="tfNombreAbscence" layoutX="23.0" layoutY="194.0" />
+                  <TextField fx:id="n1" layoutX="94.0" layoutY="242.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n2" layoutX="82.0" layoutY="268.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n3" layoutX="81.0" layoutY="294.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n7" layoutX="110.0" layoutY="399.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n6" layoutX="102.0" layoutY="373.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n5" layoutX="81.0" layoutY="347.0" prefHeight="26.0" prefWidth="37.0" />
+                  <TextField fx:id="n4" layoutX="110.0" layoutY="320.0" prefHeight="22.0" prefWidth="37.0" />
+                  <RadioButton fx:id="one" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#selectAnnee1" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupRB" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="two" layoutX="69.0" layoutY="149.0" mnemonicParsing="false" onAction="#selectAnnee2" text="2" toggleGroup="$groupRB" />
+                  <RadioButton fx:id="three" layoutX="125.0" layoutY="149.0" mnemonicParsing="false" onAction="#selectAnnee3" text="3" toggleGroup="$groupRB" />
+                  <Label layoutX="96.0" layoutY="218.0" text="Note :" />
+                  <Label fx:id="labelProb" layoutX="29.0" layoutY="497.0" prefHeight="62.0" prefWidth="179.0" textFill="#970000" />
+          </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+              <children>
+                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Liste des étudiants " textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <ListView fx:id="listeVueEtudiants" layoutX="12.0" layoutY="101.0" onMouseClicked="#selectStudent" prefHeight="439.0" prefWidth="407.0" />
+                        <Button fx:id="boutonAfficheListe" layoutX="16.0" layoutY="47.0" mnemonicParsing="false" onAction="#afficherListe" text="Recharger la liste" />
+                        <Separator layoutY="91.0" prefHeight="0.0" prefWidth="449.0" />
+                        <Separator layoutX="164.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="94.0" prefWidth="1.0" />
+                        <Label alignment="CENTER" layoutX="170.0" layoutY="14.0" style="&#10;" text="Tri" textAlignment="CENTER" wrapText="false">
+                           <textFill>
+                              <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
+                           </textFill>
+                           <font>
+                              <Font size="18.0" fx:id="x12" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="tri" layoutX="181.0" layoutY="47.0" prefWidth="150.0" />
+                        <CheckBox fx:id="cbD" layoutX="205.0" layoutY="15.0" mnemonicParsing="false" text="Decroissant" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="102.0" style="&#10;" text="Details de l'étudiant" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <Text layoutX="9.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
+                  <Text fx:id="l41" layoutX="9.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre d'abscence / note :" />
+                  <Text layoutX="10.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année :" />
+                  <Label fx:id="l2" layoutX="36.0" layoutY="195.0" text="aucun" />
+                  <Label fx:id="l4" layoutX="41.0" layoutY="289.0" text="aucune" />
+                  <Label fx:id="l3" layoutX="39.0" layoutY="242.0" text="aucune" />
+                  <Button fx:id="retourMenu" layoutX="137.0" layoutY="21.0" mnemonicParsing="false" onAction="#backToMenu" text="Retour" />
+                  <Line endX="110.0" layoutX="108.0" layoutY="90.0" opacity="0.33" startX="-108.0" />
+                  <Text layoutX="6.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type :" />
+                  <Label fx:id="l1" layoutX="33.0" layoutY="146.0" text="aucun" />
+                  <Text layoutX="13.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matières :" />
+                  <Label fx:id="l5" layoutX="45.0" layoutY="347.0" text="aucune" />
+                  <Label layoutX="16.0" layoutY="27.0" text="FILTRE NON FAIT !" textFill="RED" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="IUT A" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="2022 © " textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

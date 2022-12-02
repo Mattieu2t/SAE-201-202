@@ -1,0 +1,93 @@
+---FONCTIONS---
+
+int calculPoid(Student tuteur, Student tutore)
+// Calcul le poids entre les deux
+
+GrapheNonOrienteValue<Student> creeGraphe(
+			       ArrayList<Student> tuteurs,
+			       ArrayList<Student> tutores)
+// Cree un graphe à partir de deux listes tuteur, tutore
+
+void combleExesTutores(GrapheNonOrienteValue<Student> graphe,
+		       ArrayList<Student> tuteurs,
+		       int nombreTutores)
+// Rajoute des possibilités d'ajout d'étudiant pour les tuteurs
+de 3eme annee
+
+void supprExesTuteurs(GrapheNonOrienteValue<Student> graphe,
+		       ArrayList<Student> tuteurs,
+		       int nombreTutores)
+// Supprime les tuteurs qui ne sont pas necessaire
+
+void supprExesTutores(GrapheNonOrienteValue<Student> graphe,
+		       ArrayList<Student> tutores,
+		       int nombreTuteurs)
+// Supprime les etudiants qui ne peuvent pas avoir de tuteur
+
+void trieNomDesc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre alphabetique des noms
+
+void trieNomAsc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre inverse alphabetique des noms
+
+void trieNoteDesc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre décroissant des notes
+
+void trieNoteAsc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre Croissant des notes
+
+void trieAbscenceDesc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre décroissant du nombre d'abscence
+
+void trieAbscenceDesc(ArrayList<Student> liste)
+// Trie une liste dans l'ordre croissant du nombre d'abscence
+
+int moyenne()
+// calcul la moyenne 
+
+void importeEtudiants(String chemin, ArrayList<Student> tuteurs, ArrayList<Student> tutores)
+// Recupere les données d'un fichier csv d'étudiants donner en parametre dans la liste tuteurs et tutores
+
+void sauvegardeListe(String chemin, ArrayList<Student> liste, String binaryFileName)
+// Créé un fichier binaire avec à partir d'une Arrayliste Student
+
+void chargeListe(String chemin)
+// Charge un fichier binaire dans une Arrayliste Student
+
+void exporteAffectations(String chemin)
+// Créé un fichier CSV avec la liste des affectations
+// Si le fichier existe deja, ajouter nom(1)
+
+int nbExportAlreadyExist(String chemin)
+// Verifie le nombre de fichier AffectationsEtudiants(?).csv
+
+ArrayList<Student> castToListeStudent(ArrayList<? extends Student> liste)
+// TRANSFORME UNE LISTE DE TUTEURS OU DE TUTORES EN LISTE DE STUDENTS (UPCAST)
+
+private ArrayList<Float> recupNotes(String[] infoStudent)
+// récupére dans une arrayList les notes d'un étudiant
+// CREE UNE ERROR si pas Float
+
+---CLASS---
+
+class Tuteurs{
+      Liste de tuteur
+      
+      void addAll()
+      // Boucle de all /!\ PAS SUR
+}
+
+class Tutores{
+	Liste de tutore
+}
+
+class Bulletin{
+	hashMap note,matiere bulletin
+}
+
+enum Matiere{
+	mat1,mat2,mat3,...
+}
+
+Tutor
+Tutee

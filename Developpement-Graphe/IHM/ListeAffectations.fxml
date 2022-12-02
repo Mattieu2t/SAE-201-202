@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListeAffectations">
+  <children>
+    <SplitPane dividerPositions="0.2505567928730512, 0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Filtre" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <Text layoutX="26.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <TextArea fx:id="tFNom" layoutX="13.0" layoutY="59.0" prefHeight="37.0" prefWidth="186.0" />
+                  <Text layoutX="15.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Par nom :" />
+                  <TextArea fx:id="tFNote" layoutX="13.0" layoutY="125.0" prefHeight="37.0" prefWidth="186.0" />
+                  <Text layoutX="15.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Par note :" />
+                  <TextArea fx:id="tFNA" layoutX="13.0" layoutY="196.0" prefHeight="37.0" prefWidth="186.0" />
+                  <Text layoutX="15.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Par nombre d'absence :" />
+                  <ComboBox layoutX="15.0" layoutY="503.0" prefWidth="150.0" />
+                  <Text layoutX="15.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matière :" />
+                  <CheckBox fx:id="math" layoutX="13.0" layoutY="264.0" mnemonicParsing="false" selected="true" text="MATH" />
+                  <CheckBox fx:id="dev" layoutX="13.0" layoutY="290.0" mnemonicParsing="false" selected="true" text="DEV" />
+                  <CheckBox fx:id="ihm" layoutX="13.0" layoutY="316.0" mnemonicParsing="false" selected="true" text="IHM" />
+                  <CheckBox fx:id="graphe" layoutX="12.0" layoutY="342.0" mnemonicParsing="false" selected="true" text="GRAPHE" />
+                  <CheckBox fx:id="reseau" layoutX="12.0" layoutY="395.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" selected="true" text="RESEAU" />
+                  <CheckBox fx:id="web" layoutX="12.0" layoutY="369.0" mnemonicParsing="false" selected="true" text="WEB" />
+                  <CheckBox fx:id="system" layoutX="13.0" layoutY="421.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" selected="true" text="SYSTEM" />
+                  <Line endX="-80.0" endY="183.0" layoutX="93.0" layoutY="264.0" startX="-80.0" startY="0.442718505859375" />
+                  <Label fx:id="labelProb" layoutX="12.0" layoutY="456.0" prefHeight="38.0" prefWidth="166.0" />
+          </children>
+        </AnchorPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+        <children>
+          <Label alignment="CENTER" font="$x1" layoutY="14.0" style="&#10;" text="Liste des affectations" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <Button fx:id="buttonAffiche" layoutX="16.0" layoutY="47.0" mnemonicParsing="false" onAction="#afficherListe" text="Recharger la liste" />
+                  <Separator layoutY="91.0" prefHeight="0.0" prefWidth="449.0" />
+                  <Separator layoutX="171.0" orientation="VERTICAL" prefHeight="94.0" prefWidth="1.0" />
+                  <Button fx:id="buttonReglage" layoutX="216.0" layoutY="47.0" mnemonicParsing="false" onAction="#settings" text="Réglages affectations" />
+                  <Label alignment="CENTER" layoutX="180.0" layoutY="14.0" style="&#10;" text="Réglages" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x11" />
+                     </font>
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x21" />
+                     </textFill>
+                  </Label>
+                  <ListView fx:id="listeVueAffectations" layoutX="22.0" layoutY="105.0" onMouseClicked="#selectAffectation" prefHeight="457.0" prefWidth="406.0" />
+        </children>
+      </AnchorPane>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="90.0" prefWidth="224.0">
+                     <children>
+                        <Button fx:id="retourMenu" layoutX="158.0" layoutY="13.0" mnemonicParsing="false" onAction="#backToMenu" text="Retour" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </AnchorPane>
+              <AnchorPane prefHeight="475.0" prefWidth="224.0">
+                <children>
+                  <Label alignment="CENTER" font="$x1" layoutX="15.0" layoutY="105.0" style="&#10;" text="Details de l'affectation" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <Text layoutX="14.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
+                        <Text layoutX="19.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note :" />
+                        <Text layoutX="18.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Année :" />
+                        <Label fx:id="l1" layoutX="59.0" layoutY="192.0" text="?" />
+                        <Label fx:id="l2" layoutX="62.0" layoutY="238.0" text="?" />
+                        <Label fx:id="l3" layoutX="65.0" layoutY="280.0" text="?" />
+                        <Text layoutX="14.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
+                        <Text layoutX="13.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note :" />
+                        <Text layoutX="15.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre abscence :" />
+                        <Label fx:id="l5" layoutX="59.0" layoutY="415.0" text="?" />
+                        <Label fx:id="l6" layoutX="59.0" layoutY="461.0" text="?" />
+                        <Label fx:id="l7" layoutX="59.0" layoutY="508.0" text="?" />
+                        <Label layoutX="90.0" layoutY="142.0" prefHeight="17.0" prefWidth="47.0" text="Tuteur">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="366.0" prefHeight="17.0" prefWidth="47.0" text="Tutore">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="13.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matière :" wrappingWidth="60.0" />
+                        <Label fx:id="l4" layoutX="59.0" layoutY="326.0" text="?" />
+                        <Line endX="120.0" layoutX="104.0" layoutY="41.0" startX="-110.0" stroke="#00000063" />
+                </children>
+              </AnchorPane>
+               </children>
+            </VBox>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="IUT A" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label font="$x3" maxWidth="-1.0" text="2022 © " textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
